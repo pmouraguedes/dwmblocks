@@ -12,6 +12,8 @@ static const Block blocks[] = {
 
     {"", "~/software/dwmblocks/scripts/wifi.sh", 10, 0},
 
+    {"", "~/software/dwmblocks/scripts/vpn.sh", 10, 0},
+
     {"   ",
      "cat /sys/class/power_supply/BAT0/capacity | awk '{print $1\"%\"}'", 60,
      0},
