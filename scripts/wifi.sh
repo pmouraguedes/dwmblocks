@@ -12,7 +12,7 @@ if [ "$ethernet" = "up" ]; then
     output="${output}󰈀"
 fi
 if [ "$wifi" = "up" ]; then
-    output="${output}  "
+    output="${output}   "
 
     percent="$(iw dev wlp0s20f3 link |
         sed -n '/signal/s/.*\(-[0-9]*\).*/\1/p' |
