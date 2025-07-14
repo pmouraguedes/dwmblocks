@@ -3,22 +3,24 @@
 static const Block blocks[] = {
     /*Icon*/ /*Command*/ /*Update Interval*/ /*Update Signal*/
 
-    {"󰋊  ", "df -h / | awk 'NR==2 {printf \"%s/%s\", $3, $2}'", 30, 0},
+    {"", "~/software/dwmblocks/scripts/sprint_progress.sh", 1200, 0},
+
+    {"󰋊 ", "df -h / | awk 'NR==2 {printf \"%s/%s\", $3, $2}'", 30, 0},
 
     {"RAM: ",
      "free -h | awk '/^Mem/ {printf \"%s/%s\", $3, $2}' | sed 's/i//g'", 30, 0},
 
-    {"   ", "~/software/dwmblocks/scripts/cpu.sh", 10, 0},
+    {" ", "~/software/dwmblocks/scripts/cpu.sh", 10, 0},
 
     {"", "~/software/dwmblocks/scripts/wifi.sh", 10, 0},
 
     {"", "~/software/dwmblocks/scripts/vpn.sh", 10, 0},
 
-    {"   ",
+    {"  ",
      "cat /sys/class/power_supply/BAT0/capacity | awk '{print $1\"%\"}'", 60,
      0},
 
-    {"  ", "~/software/dwmblocks/scripts/packages.sh", 7200, 0},
+    {" ", "~/software/dwmblocks/scripts/packages.sh", 7200, 0},
 
     {"", "~/software/dwmblocks/scripts/weather.sh", 1200, 0},
 
