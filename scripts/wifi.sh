@@ -1,10 +1,11 @@
 #!/bin/bash
 
-ETHERNET_INTERFACE="enp0s31f6"
-WIFI_INTERFACE="wlp0s20f3"
+# if you don't have NetworkManager (nmcli) installed, just harcode the interface names
+ETHERNET_INTERFACE=$(nmcli device | grep -e 'ethernet\s' | awk '{ print $1}')
+WIFI_INTERFACE=$(nmcli device | grep -e 'wifi\s' | awk '{ print $1}')
 
-[ "$(cat /sys/class/net/$ETHERNET_INTERFACE/operstate)" = 'up' ] && ethernet=up
-[ "$(cat /sys/class/net/$WIFI_INTERFACE/operstate)" = 'up' ] && wifi=up
+[ "$(cat /sys/class/net/"$ETHERNET_INTERFACE"/operstate)" = 'up' ] && ethernet=up
+[ "$(cat /sys/class/net/"$WIFI_INTERFACE"/operstate)" = 'up' ] && wifi=up
 
 output=""
 
@@ -18,7 +19,8 @@ if [ "$wifi" = "up" ]; then
         sed -n '/signal/s/.*\(-[0-9]*\).*/\1/p' |
         awk '{print ($1 > -50 ? 100 :($1 < -100 ? 0 : ($1+100)*2))}')"
     output="${output}${percent}%"
-else
+fi
+if [ "$wifi" != "up" ] && [ "$ethernet" != "up" ]; then
     output="No Internet"
 fi
 
