@@ -15,7 +15,7 @@ fi
 if [ "$wifi" = "up" ]; then
     output="${output}   "
 
-    percent="$(iw dev wlp0s20f3 link |
+    percent="$(iw dev "$WIFI_INTERFACE" link |
         sed -n '/signal/s/.*\(-[0-9]*\).*/\1/p' |
         awk '{print ($1 > -50 ? 100 :($1 < -100 ? 0 : ($1+100)*2))}')"
     output="${output}${percent}%"

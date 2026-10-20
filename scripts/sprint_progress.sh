@@ -2,7 +2,7 @@
 
 # Configuration
 SPRINT_WEEKS=4             # Hardcoded sprint duration in weeks
-INITIAL_START="2025-06-10" # Fixed initial sprint start date (a Monday, adjust once)
+INITIAL_START="2025-12-30" # Fixed initial sprint start date (a Monday, adjust once)
 # END_DAY="monday"           # Sprint ends on a Monday
 
 # Convert dates to seconds since epoch

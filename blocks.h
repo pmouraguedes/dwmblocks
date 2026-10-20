@@ -3,7 +3,7 @@
 static const Block blocks[] = {
     /*Icon*/ /*Command*/ /*Update Interval*/ /*Update Signal*/
 
-    {"", "~/software/dwmblocks/scripts/sprint_progress.sh", 1200, 0},
+    // {"", "~/software/dwmblocks/scripts/sprint_progress.sh", 1200, 0},
 
     {"󰋊 ", "df -h / | awk 'NR==2 {printf \"%s/%s\", $3, $2}'", 30, 0},
 
@@ -18,13 +18,15 @@ static const Block blocks[] = {
 
     {"", "~/software/dwmblocks/scripts/wifi.sh", 10, 0},
 
-    {"", "~/software/dwmblocks/scripts/vpn.sh", 10, 0},
+    // {"", "~/software/dwmblocks/scripts/vpn.sh", 10, 0},
 
     {"  ",
      "cat /sys/class/power_supply/BAT0/capacity | awk '{print $1\"%\"}'", 60,
      0},
 
     {" ", "~/software/dwmblocks/scripts/packages.sh", 7200, 0},
+
+    {"", "~/software/dwmblocks/scripts/sunhours.sh", 120, 0},
 
     {"", "~/software/dwmblocks/scripts/weather.sh", 1200, 0},
 
