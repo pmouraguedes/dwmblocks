@@ -12,7 +12,9 @@ static const Block blocks[] = {
 
     {" ", "~/software/dwmblocks/scripts/cpu.sh", 10, 0},
 
-    {"", "~/software/dwmblocks/scripts/igpu.sh", 10, 0},
+    // {"", "~/software/dwmblocks/scripts/igpu.sh", 10, 0},
+
+    {"", "~/software/dwmblocks/scripts/dgpu.sh", 10, 0},
 
     // {"", "~/software/dwmblocks/scripts/egpu.sh", 10, 0},
 
