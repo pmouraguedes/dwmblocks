@@ -32,6 +32,8 @@ static const Block blocks[] = {
 
     {"", "~/software/dwmblocks/scripts/weather.sh", 1200, 0},
 
+    {"", "~/software/dwmblocks/scripts/usmarket.sh", 600, 0},
+
     {"", "date '+%F %T'", 1, 0},
 };
 
