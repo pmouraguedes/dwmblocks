@@ -1,5 +1,5 @@
 #!/bin/sh
-# US market (NYSE/NASDAQ) regular session hours in system local time
+# US market (NYSE/NASDAQ) regular session hours in local time
 
 # Use today's NY date so DST on either side is handled correctly.
 ny_day=$(TZ=America/New_York date +%F)
@@ -12,4 +12,6 @@ if [ -z "$open" ] || [ -z "$close" ]; then
     exit 1
 fi
 
-echo "US: ${open}-${close}"
+now=$(TZ=America/New_York date +%H:%M)
+
+echo "US: ${open}-${close} (${now})"
