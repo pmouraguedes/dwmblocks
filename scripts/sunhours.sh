@@ -17,9 +17,8 @@ fi
 sunrise_iso=$(echo "$data" | grep -oP '(?<="sunrise":")[^"]+')
 sunset_iso=$(echo "$data" | grep -oP '(?<="sunset":")[^"]+')
 
-# System zone is not Lisbon (often Europe/Berlin). Force WET/WEST explicitly.
-sunrise=$(TZ=Europe/Lisbon date -d "${sunrise_iso}" +%H:%M 2>/dev/null)
-sunset=$(TZ=Europe/Lisbon date -d "${sunset_iso}" +%H:%M 2>/dev/null)
+sunrise=$(date -d "${sunrise_iso}" +%H:%M 2>/dev/null)
+sunset=$(date -d "${sunset_iso}" +%H:%M 2>/dev/null)
 
 if [ -z "$sunrise" ] || [ -z "$sunset" ]; then
     echo "󰖜/󰖛 err  "
